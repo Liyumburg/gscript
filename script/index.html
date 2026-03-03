@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Auto Download Demo</title>
+  <style>
+    body {
+      font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 { margin-bottom: 1rem; }
+    button {
+      background: #0078d7;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    button:hover { background: #005fa1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CMD Auto-Typer</h1>
+    <p>Click the button to open a PowerShell window that types random text.</p>
+  <button id="open-cmd">Open CMD and auto-type random text</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

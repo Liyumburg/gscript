@@ -1,0 +1,11 @@
+{
+  "name": "auto-download-demo",
+  "version": "1.0.0",
+  "description": "Local server to perform downloads on the machine (CMD-side)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

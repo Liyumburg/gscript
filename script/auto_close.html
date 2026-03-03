@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Downloading...</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:20px}</style>
+</head>
+<body>
+  <p>Preparing download…</p>
+  <script>
+    function params() {
+      const p = {};
+      location.search.substring(1).split('&').forEach(s=>{if(!s) return; const [k,v]=s.split('='); p[decodeURIComponent(k)]=decodeURIComponent(v||'');});
+      return p;
+    }
+    (function(){
+      const p = params();
+      const url = p.url || 'sample.txt';
+      const filename = p.filename || '';
+      try {
+        const a = document.createElement('a');
+        a.href = url;
+        if (filename) a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      } catch (e) {
+        console.error(e);
+      }
+      // Give the browser a moment to start the download, then close the window
+      setTimeout(() => {
+        try { window.close(); } catch (e) { /* ignored */ }
+        // If close failed (some browsers block), inform the user
+        setTimeout(()=>{
+          document.body.innerHTML = '<p>If this window did not close automatically, please close it manually.</p>';
+        }, 200);
+      }, 800);
+    })();
+  </script>
+</body>
+</html>
